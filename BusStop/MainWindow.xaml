@@ -1,0 +1,56 @@
+﻿<Window x:Class="BusStop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="6"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="LightBlue" >
+            <Grid.RowDefinitions >
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Background ="LightGray" BorderBrush="LightBlue"  Command="{Binding NavigateToFahrplanCommand}" BorderThickness="6,0,0,0" VerticalContentAlignment= "Bottom">
+                <StackPanel>
+                    <Image Margin="0,0,0,5" Source="pack://application:,,,/Resources/SecondNavigationIcon.png" Height="60"></Image>
+                    <TextBlock  Margin="0,0,0,5"  Text="Fahrplan"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="1" Background ="LightGray"   BorderBrush="LightBlue"  Command="{Binding NavigateToVerbindungenCommand}" BorderThickness="6,0,0,0" VerticalContentAlignment= "Bottom">
+                <StackPanel>
+                    <Image Margin="0,0,0,5" Source="pack://application:,,,/Resources/ThirdNavigationIcon.png" Height="60"></Image>
+                    <TextBlock  Margin="0,0,0,5"  Text="Verbindungen"></TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="2" Background ="LightGray" BorderBrush="LightBlue"  Command="{Binding NavigateToOrtFindenCommand}" BorderThickness="6,0,0,0"  VerticalContentAlignment= "Bottom">
+                <StackPanel>
+                    <Image Margin="0,0,0,5" Source="pack://application:,,,/Resources/FirstNavigationIcon.png" Height="60"></Image>
+                    <TextBlock  Margin="0,0,0,5"  Text="Ort finden"></TextBlock>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <GridSplitter Grid.Column="1" Width="4" Background="LightBlue" HorizontalAlignment="Stretch"></GridSplitter>
+
+        <Grid Grid.Column="2">
+            <ContentPresenter Content="{Binding _aktuellesTabViewModel}">
+                <!--<ContentPresenter.Resources>
+                    <-->
+                <!--DataTemplate DataType="{x:Type viewmodel:FahrplanViewModel}">
+                        -->
+                <!--<view:FahrPlanUserControl/>-->
+                <!--
+                    </DataTemplate>-->
+                <!--
+                </ContentPresenter.Resources>-->
+            </ContentPresenter>
+
+        </Grid>
+
+    </Grid>
+</Window>
