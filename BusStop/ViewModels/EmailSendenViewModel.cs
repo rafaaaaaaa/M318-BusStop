@@ -161,7 +161,7 @@ namespace ProjectTemplate.ViewModels
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                
                 isReal = false;
             }
 
