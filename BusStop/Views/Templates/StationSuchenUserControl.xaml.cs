@@ -14,18 +14,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ProjectTemplate
+namespace ProjectTemplate.Views.Templates
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for StationSuchenUserControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class StationSuchenUserControl : UserControl
     {
-        public MainWindow() 
+        public StationSuchenUserControl()
         {
             InitializeComponent();
-            DataContext = new MainViewModel();
+            DataContext = new StationSuchenViewModel();
         }
 
+        private void Load(object sender, RoutedEventArgs e)
+        {
+            InputCombobox.Focus();
+        }
     }
 }
